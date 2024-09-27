@@ -1,15 +1,22 @@
-@use "app/styles/variables" as variables;
+@use 'app/styles/variables' as variables;
 
 $max-width: 1440px;
 
-$border: 1px solid variables.$color-gray-blue;
+$border: 1px solid variables.$color-gray-base;
 
 .root {
-  display: flex;
-  flex-grow: 1;
-  box-sizing: content-box;
-  margin-inline: auto;
-  max-width: $max-width;
-  border-right: $border;
-  border-left: $border;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    box-sizing: content-box;
+    margin-inline: auto;
+    max-width: $max-width;
+    border-right: $border;
+    border-left: $border;
+    width: 100%;
 }

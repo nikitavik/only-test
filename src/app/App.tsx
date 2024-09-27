@@ -1,8 +1,8 @@
-import React, {FC} from 'react';
-
-import {PageTitle} from "shared/PageTitle";
+import React, { FC } from 'react';
+import { PageTitle } from 'shared/PageTitle';
 
 import styles from './App.module.scss';
+import './styles/global.scss';
 
 export const App: FC = () => {
     return (

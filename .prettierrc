@@ -1,0 +1,29 @@
+{
+    "printWidth": 100,
+    "singleQuote": true,
+    "endOfLine": "auto",
+    "trailingComma": "es5",
+    "arrowParens": "always",
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": ["**/*.{scss,css}"],
+            "options": {
+                "order": "concentric-css"
+            }
+        }
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "importOrderGroupNamespaceSpecifiers": true,
+    "importOrderCaseInsensitive": true,
+    "importOrder": [
+        "^react.",
+        "<THIRD_PARTY_MODULES>",
+        "^clsx$",
+        "^@.",
+        "^((.){1,2}/).*$",
+        "^(/).*$"
+    ],
+    "plugins": ["@trivago/prettier-plugin-sort-imports"]
+}
