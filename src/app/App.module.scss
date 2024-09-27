@@ -1,0 +1,15 @@
+@use "app/styles/variables" as variables;
+
+$max-width: 1440px;
+
+$border: 1px solid variables.$color-gray-blue;
+
+.root {
+  display: flex;
+  flex-grow: 1;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-width: $max-width;
+  border-right: $border;
+  border-left: $border;
+}
