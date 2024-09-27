@@ -1,6 +1,8 @@
+@use 'app/styles/utils' as utils;
+
 .root {
     position: relative;
-    font-size: 56px;
+    font-size: utils.to-rem(56px);
     font-weight: 700;
     line-height: 1.2;
     text-align: left;

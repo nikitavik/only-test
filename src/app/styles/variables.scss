@@ -1,1 +1,8 @@
+// Colors
 $color-gray-base: #42567a;
+$color-background-base: #f4f5f9;
+
+// Transitions
+$transition-default-duration: 0.25s !default;
+$transition-default-timing-function: ease !default;
+$transition-default: $transition-default-duration $transition-default-timing-function !default;

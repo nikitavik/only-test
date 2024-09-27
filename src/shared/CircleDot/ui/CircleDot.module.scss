@@ -1,0 +1,54 @@
+@use 'app/styles/utils' as utils;
+@use 'app/styles/variables' as variables;
+
+$z-index-background: 1;
+$z-index-content: $z-index-background + 1;
+
+.content {
+    @include utils.set-transition(opacity);
+
+    position: absolute;
+    font-size: utils.to-rem(20px);
+    line-height: 1.5;
+    z-index: $z-index-content;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.root {
+    @include utils.set-size(56px);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+
+    &::before {
+        @include utils.set-transition((background-color, width, height));
+        @include utils.set-size(6px);
+
+        display: block;
+        content: '';
+        border-radius: 50%;
+        border: 1px solid variables.$color-gray-base;
+        background-color: variables.$color-gray-base;
+        z-index: $z-index-background;
+    }
+
+    &:hover {
+        .content {
+            opacity: 1;
+        }
+
+        &::before {
+            @include utils.set-size(56px);
+
+            background-color: variables.$color-background-base;
+        }
+    }
+}

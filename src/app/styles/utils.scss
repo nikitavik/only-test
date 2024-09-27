@@ -1,0 +1,29 @@
+@use 'sass:math' as math;
+@use './variables' as variables;
+
+@function to-rem($size) {
+    @return math.div($size, 16px) * 1rem;
+}
+
+@mixin set-size($width, $height: null) {
+    width: $width;
+
+    @if ($height == null) {
+        height: $width;
+    } @else {
+        height: $height;
+    }
+}
+
+@mixin set-transition(
+    $properties: (),
+    $duration: variables.$transition-default-duration,
+    $timingFunction: variables.$transition-default-timing-function
+) {
+    @if (length($properties) == 1) {
+        transition: $properties $duration $timingFunction;
+    } @else if (length($properties) > 1) {
+        transition: $duration $timingFunction;
+        transition-property: $properties;
+    }
+}
