@@ -1,7 +1,10 @@
 // Colors
 $color-gray-base: #42567a;
+$color-gray-base-light: rgba($color-gray-base, 0.2);
 $color-background-base: #f4f5f9;
 $color-blue: #3877ee;
+$color-light-blue: #5d5fef;
+$color-pink: #ef5da8;
 
 // Transitions
 $transition-default-duration: 0.25s !default;
@@ -9,6 +12,7 @@ $transition-default-timing-function: ease !default;
 $transition-default: $transition-default-duration $transition-default-timing-function !default;
 
 // Breakpoints
-$breakpoint-small: 640px !default;
-$breakpoint-medium: 900px !default;
-$breakpoint-large: 1200px !default;
+$breakpoint-small: 640px;
+$breakpoint-medium: 900px;
+$breakpoint-large: 1200px;
+$breakpoint-x-large: 1560px;

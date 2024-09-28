@@ -14,7 +14,7 @@ module.exports = {
 
     rules: {
         'prettier/prettier': true,
-        'selector-max-id': 0,
+        'selector-max-id': 1,
         'declaration-no-important': true,
         'comment-empty-line-before': [
             'always',

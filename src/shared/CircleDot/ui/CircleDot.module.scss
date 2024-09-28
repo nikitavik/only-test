@@ -19,6 +19,7 @@ $z-index-content: $z-index-background + 1;
 }
 
 .root {
+    @include utils.set-transition(transform, 0.6s, ease-in);
     @include utils.set-size(56px);
 
     position: relative;

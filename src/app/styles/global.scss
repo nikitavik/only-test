@@ -3,11 +3,37 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: PTSans, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     box-sizing: border-box;
     border: none;
     background-color: transparent;
     color: variables.$color-gray-base;
+}
+
+html,
+body,
+button {
+    font-family: PTSans, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+html {
+    height: 100%;
+    word-break: break-word;
+}
+
+html,
+body,
+#root {
+    display: flex;
+    flex-grow: 1;
+    flex-flow: column;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    background-color: variables.$color-background-base;
+    text-rendering: optimizeLegibility;
 }
 
 @font-face {
