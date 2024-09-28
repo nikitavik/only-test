@@ -30,5 +30,18 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
 
-    return [typescriptLoader, cssLoader];
+    const svgLoader = {
+        test: /\.svg$/,
+        use: [
+            {
+                loader: '@svgr/webpack',
+                options: {
+                    typescript: true,
+                    ext: 'tsx',
+                },
+            },
+        ],
+    };
+
+    return [typescriptLoader, cssLoader, svgLoader];
 }

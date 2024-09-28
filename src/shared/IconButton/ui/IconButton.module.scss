@@ -1,0 +1,27 @@
+@use 'app/styles/variables' as variables;
+@use 'app/styles/utils' as utils;
+@use 'app/styles/media' as media;
+
+.root {
+    @include utils.set-size(50px);
+
+    border-radius: 50%;
+    border: 1px solid variables.$color-gray-base;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media.vw-small-down {
+        @include utils.set-size(25px);
+    }
+}
+
+.icon {
+    @include utils.set-size(14px);
+
+    @include media.vw-small-down {
+        @include utils.set-size(7px);
+    }
+}

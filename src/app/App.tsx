@@ -1,5 +1,7 @@
+import { Circle } from 'features/Circle';
+import { CircleControlBlock } from 'features/CircleControlBlock';
+import { Slider } from 'features/Slider';
 import React, { FC } from 'react';
-import { CircleDot } from 'shared/CircleDot';
 import { PageTitle } from 'shared/PageTitle';
 
 import styles from './App.module.scss';
@@ -11,9 +13,10 @@ export const App: FC = () => {
             <div className={styles.container}>
                 <PageTitle />
 
-                <CircleDot />
-                <CircleDot />
-                <CircleDot />
+                <Circle />
+
+                <CircleControlBlock circleNumber={2} />
+                <Slider />
             </div>
         </div>
     );

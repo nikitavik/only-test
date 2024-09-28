@@ -1,8 +1,14 @@
 // Colors
 $color-gray-base: #42567a;
 $color-background-base: #f4f5f9;
+$color-blue: #3877ee;
 
 // Transitions
 $transition-default-duration: 0.25s !default;
 $transition-default-timing-function: ease !default;
 $transition-default: $transition-default-duration $transition-default-timing-function !default;
+
+// Breakpoints
+$breakpoint-small: 640px !default;
+$breakpoint-medium: 900px !default;
+$breakpoint-large: 1200px !default;

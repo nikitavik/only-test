@@ -1,0 +1,27 @@
+@use './variables' as variables;
+
+@mixin vw-small-down {
+    @media (max-width: variables.$breakpoint-small - 1) {
+        @content;
+    }
+}
+
+@mixin vw-medium-down {
+    @media (max-width: variables.$breakpoint-medium - 1) {
+        @content;
+    }
+}
+
+@mixin vw-large-down {
+    @media (max-width: variables.$breakpoint-large - 1) {
+        @content;
+    }
+}
+
+@mixin no-touch-hover {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            @content;
+        }
+    }
+}
