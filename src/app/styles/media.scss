@@ -1,5 +1,11 @@
 @use './variables' as variables;
 
+@mixin vw-x-small-down {
+    @media (max-width: variables.$breakpoint-x-small - 1) {
+        @content;
+    }
+}
+
 @mixin vw-small-down {
     @media (max-width: variables.$breakpoint-small - 1) {
         @content;

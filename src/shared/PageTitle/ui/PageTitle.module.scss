@@ -21,13 +21,18 @@
     }
 
     @include media.vw-medium-down {
-        font-size: utils.to-rem(28px);
+        font-size: utils.to-rem(32px);
         margin-top: 68px;
+        padding-left: 0;
     }
 
     @include media.vw-small-down {
-        font-size: utils.to-rem(20px);
+        font-size: utils.to-rem(28px);
         margin-top: 59px;
+    }
+
+    @include media.vw-x-small-down {
+        font-size: utils.to-rem(20px);
     }
 
     &::before {
@@ -38,5 +43,9 @@
         width: 5px;
         content: '';
         background-image: linear-gradient(180deg, #3877ee -5%, #ef5da8 85%);
+
+        @include media.vw-medium-down {
+            display: none;
+        }
     }
 }

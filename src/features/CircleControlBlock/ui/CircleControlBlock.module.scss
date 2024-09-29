@@ -1,7 +1,10 @@
 @use 'app/styles/utils' as utils;
+@use 'app/styles/media' as media;
 
 .root {
-    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 .counter {

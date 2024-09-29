@@ -16,23 +16,11 @@ $border: 1px solid variables.$color-gray-base-light;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    box-sizing: content-box;
     margin-inline: auto;
     max-width: $max-width;
     border-right: $border;
     border-left: $border;
     width: 100%;
-
-    // TODO: Horizontal line
-    //&::before {
-    //    position: absolute;
-    //    content: '';
-    //    background-color: variables.$color-gray-base-light;
-    //    left: 0;
-    //    right: 0;
-    //    height: 1px;
-    //    top: 50%;
-    //}
 
     &::after {
         position: absolute;
@@ -42,22 +30,55 @@ $border: 1px solid variables.$color-gray-base-light;
         bottom: 0;
         width: 1px;
         left: 50%;
+
+        @include media.vw-medium-down {
+            display: none;
+        }
     }
 }
 
 .innerContainer {
     position: relative;
     padding-inline: 80px;
+
+    @include media.vw-medium-down {
+        padding-inline: 40px;
+    }
+
+    @include media.vw-small-down {
+        padding-inline: 20px;
+    }
 }
 
 .circleContainer {
+    position: relative;
     margin-top: 215px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 40px;
 
     @include media.vw-x-large-down {
-        margin-top: 100px;
+        margin-top: 120px;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        background-color: variables.$color-gray-base-light;
+        left: -80px;
+        right: -80px;
+        height: 1px;
+
+        @include media.vw-medium-down {
+            display: none;
+        }
+    }
+}
+
+.circle {
+    @include media.vw-medium-down {
+        display: none;
     }
 }
 
@@ -65,6 +86,10 @@ $border: 1px solid variables.$color-gray-base-light;
     position: absolute;
     left: 0;
     top: 0;
+
+    @include media.vw-medium-down {
+        position: revert;
+    }
 }
 
 .yearContainer {
@@ -77,6 +102,7 @@ $border: 1px solid variables.$color-gray-base-light;
     }
 
     @include media.vw-medium-down {
+        position: revert;
         column-gap: 70px;
     }
 
@@ -90,6 +116,7 @@ $border: 1px solid variables.$color-gray-base-light;
     font-weight: 700;
     line-height: 1.25;
     letter-spacing: -0.02em;
+    white-space: nowrap;
 
     @include media.vw-large-down {
         font-size: utils.to-rem(168px);
@@ -100,6 +127,10 @@ $border: 1px solid variables.$color-gray-base-light;
     }
 
     @include media.vw-small-down {
+        font-size: utils.to-rem(78px);
+    }
+
+    @include media.vw-x-small-down {
         font-size: utils.to-rem(56px);
     }
 
@@ -113,7 +144,6 @@ $border: 1px solid variables.$color-gray-base-light;
 }
 
 .sliderContainer {
-    overflow: hidden;
-    margin-top: 96px;
+    margin-top: 56px;
     padding-bottom: 104px;
 }

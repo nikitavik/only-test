@@ -12,6 +12,7 @@ $transition-default-timing-function: ease !default;
 $transition-default: $transition-default-duration $transition-default-timing-function !default;
 
 // Breakpoints
+$breakpoint-x-small: 425px;
 $breakpoint-small: 640px;
 $breakpoint-medium: 900px;
 $breakpoint-large: 1200px;

@@ -1,5 +1,5 @@
 import { Circle } from 'features/Circle';
-// import { CircleControlBlock } from 'features/CircleControlBlock';
+import { CircleControlBlock } from 'features/CircleControlBlock';
 import { Slider } from 'features/Slider';
 import React, { FC } from 'react';
 import { PageTitle } from 'shared/PageTitle';
@@ -24,10 +24,10 @@ export const App: FC = () => {
                             <span className={clsx(styles.year, styles.colorPink)}>2023</span>
                         </h2>
 
-                        <Circle />
-                    </div>
+                        <Circle className={styles.circle} />
 
-                    {/*<CircleControlBlock circleNumber={2} />*/}
+                        <CircleControlBlock circleNumber={2} />
+                    </div>
 
                     <div className={styles.sliderContainer}>
                         <Slider />
