@@ -28,6 +28,7 @@ $z-index-content: $z-index-background + 1;
     align-items: center;
     cursor: pointer;
     outline: none;
+    user-select: none;
 
     &::before {
         @include utils.set-transition((background-color, width, height));

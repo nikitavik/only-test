@@ -2,54 +2,6 @@
 @use 'app/styles/utils' as utils;
 @use 'app/styles/media' as media;
 
-$max-width: 1440px;
-
-$border: 1px solid variables.$color-gray-base-light;
-
-.root {
-    position: relative;
-    flex-grow: 1;
-    display: flex;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    margin-inline: auto;
-    max-width: $max-width;
-    border-right: $border;
-    border-left: $border;
-    width: 100%;
-
-    &::after {
-        position: absolute;
-        content: '';
-        background-color: variables.$color-gray-base-light;
-        top: 0;
-        bottom: 0;
-        width: 1px;
-        left: 50%;
-
-        @include media.vw-medium-down {
-            display: none;
-        }
-    }
-}
-
-.innerContainer {
-    position: relative;
-    padding-inline: 80px;
-
-    @include media.vw-medium-down {
-        padding-inline: 40px;
-    }
-
-    @include media.vw-small-down {
-        padding-inline: 20px;
-    }
-}
-
 .circleContainer {
     position: relative;
     margin-top: 215px;
@@ -82,20 +34,11 @@ $border: 1px solid variables.$color-gray-base-light;
     }
 }
 
-.titleContainer {
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    @include media.vw-medium-down {
-        position: revert;
-    }
-}
-
 .yearContainer {
     display: flex;
     position: absolute;
     column-gap: 140px;
+    user-select: none;
 
     @include media.vw-large-down {
         column-gap: 100px;
@@ -144,6 +87,33 @@ $border: 1px solid variables.$color-gray-base-light;
 }
 
 .sliderContainer {
+    @include utils.set-transition((opacity, transform), 250ms, ease-in);
+
     margin-top: 56px;
     padding-bottom: 104px;
+    opacity: 1;
+
+    &.isLoading {
+        opacity: 0;
+
+        @include media.vw-medium-down {
+            transform: translateY(10%);
+        }
+    }
+}
+
+.mobileTitleContainer {
+    display: none;
+    padding-bottom: 20px;
+    border-bottom: 1px solid variables.$color-gray-base-light;
+    margin-bottom: 20px;
+
+    @include media.vw-medium-down {
+        display: block;
+    }
+}
+
+.mobileTitle {
+    font-size: utils.to-rem(20px);
+    line-height: 1.2;
 }

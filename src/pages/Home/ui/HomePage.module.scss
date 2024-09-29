@@ -1,0 +1,60 @@
+@use 'app/styles/variables' as variables;
+@use 'app/styles/media' as media;
+
+$max-width: 1440px;
+
+$border: 1px solid variables.$color-gray-base-light;
+
+.root {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-inline: auto;
+    max-width: $max-width;
+    border-right: $border;
+    border-left: $border;
+    width: 100%;
+
+    &::after {
+        position: absolute;
+        content: '';
+        background-color: variables.$color-gray-base-light;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        left: 50%;
+
+        @include media.vw-medium-down {
+            display: none;
+        }
+    }
+}
+
+.innerContainer {
+    position: relative;
+    padding-inline: 80px;
+
+    @include media.vw-medium-down {
+        padding-inline: 40px;
+    }
+
+    @include media.vw-small-down {
+        padding-inline: 20px;
+    }
+}
+
+.titleContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    @include media.vw-medium-down {
+        position: revert;
+    }
+}

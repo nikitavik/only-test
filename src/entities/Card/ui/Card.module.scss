@@ -1,21 +1,30 @@
 @use 'app/styles/variables' as variables;
 @use 'app/styles/utils' as utils;
+@use 'app/styles/media' as media;
 
 .root {
     display: block;
 }
 
-// TODO Add font BebasP Neue
 .title {
+    font-family: variables.$font-pt-bebas-neue;
     color: variables.$color-blue;
     font-size: utils.to-rem(25px);
     line-height: 1.2;
     text-transform: uppercase;
-    // TODO: odd number??
     margin-bottom: 15px;
+    font-weight: 400;
+
+    @include media.vw-medium-down {
+        font-size: utils.to-rem(16px);
+    }
 }
 
 .text {
     font-size: utils.to-rem(20px);
     line-height: 1.5;
+
+    @include media.vw-medium-down {
+        font-size: utils.to-rem(14px);
+    }
 }

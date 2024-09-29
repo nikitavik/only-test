@@ -1,0 +1,23 @@
+@use 'app/styles/variables' as variables;
+@use 'app/styles/media' as media;
+
+.slide {
+    cursor: pointer;
+}
+
+.bulletActive {
+    background-color: variables.$color-gray-base;
+    opacity: 1;
+}
+
+.pagination {
+    display: none;
+
+    @include media.vw-medium-down {
+        display: block;
+    }
+}
+
+.bullet {
+    display: block;
+}
