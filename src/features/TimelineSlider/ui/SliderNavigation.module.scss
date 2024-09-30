@@ -11,6 +11,10 @@
     align-items: center;
     justify-content: space-between;
     pointer-events: none;
+
+    @include media.vw-medium-down {
+        display: none;
+    }
 }
 
 .navigationButton {
@@ -24,10 +28,6 @@
     cursor: pointer;
     opacity: 1;
     pointer-events: all;
-
-    @include media.vw-medium-down {
-        display: none;
-    }
 
     &:disabled {
         background-color: variables.$color-background-base;

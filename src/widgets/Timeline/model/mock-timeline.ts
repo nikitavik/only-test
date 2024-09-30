@@ -9,7 +9,7 @@ const generateTimelineMock = (length: number) => {
 
     for (let i = 1; i < length; i++) {
         const startDate = faker.date.anytime();
-        const endDate = faker.date.future({ refDate: startDate, years: 15 });
+        const endDate = faker.date.future({ refDate: startDate, years: 20 });
 
         const range = endDate.getFullYear() - startDate.getFullYear();
 

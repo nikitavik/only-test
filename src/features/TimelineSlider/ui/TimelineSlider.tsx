@@ -12,30 +12,35 @@ import styles from './TimelineSlider.module.scss';
 
 type TimelineSliderProps = {
     slides: Slide[];
+    classes?: Classes<'slider' | 'navigation'>
 };
 
 export const TimelineSlider: FC<TimelineSliderProps> = (props) => {
-    const { slides } = props;
+    const {slides, classes} = props;
 
     const [controller, setController] = useState<SwiperClass | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
-    console.log(isBeginning);
+
+    const initializeOptions = (swiper: SwiperClass) => {
+        setController(swiper);
+        setActiveIndex(swiper.activeIndex);
+        setIsEnd(swiper.isEnd);
+        setIsBeginning(swiper.isBeginning);
+    };
     return (
         <div className={styles.root}>
             {controller !== null && (
-                <SliderNavigation controller={controller} isBeginning={isBeginning} isEnd={isEnd} />
+                <SliderNavigation controller={controller} isBeginning={isBeginning} isEnd={isEnd}
+                                  className={classes?.navigation}/>
             )}
 
             <Swiper
                 modules={[Controller]}
-                onSwiper={setController}
-                onSlideChange={(swiper) => {
-                    setActiveIndex(swiper.activeIndex);
-                    setIsEnd(swiper.isEnd);
-                    setIsBeginning(swiper.isBeginning);
-                }}
+                onSwiper={initializeOptions}
+                onSlideChange={initializeOptions}
+                onSlidesUpdated={initializeOptions}
                 spaceBetween={80}
                 breakpoints={{
                     1200: {
@@ -44,10 +49,11 @@ export const TimelineSlider: FC<TimelineSliderProps> = (props) => {
                     1000: {
                         slidesPerView: 2,
                     },
-                    640: {
-                        slidesPerView: 1.5,
+                    320: {
+                        slidesPerView: 1.6,
                     },
                 }}
+                className={classes?.slider}
             >
                 {slides.map((card, index) => (
                     <SwiperSlide key={index} className={styles.slide}>

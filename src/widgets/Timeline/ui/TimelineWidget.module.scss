@@ -11,7 +11,11 @@
     padding-bottom: 40px;
 
     @include media.vw-x-large-down {
-        margin-top: 120px;
+        margin-top: 100px;
+    }
+
+    @include media.vw-medium-down {
+        margin-top: 56px;
     }
 
     &::before {
@@ -87,19 +91,8 @@
 }
 
 .sliderContainer {
-    @include utils.set-transition((opacity, transform), 250ms, ease-in);
-
     margin-top: 56px;
     padding-bottom: 104px;
-    opacity: 1;
-
-    &.isLoading {
-        opacity: 0;
-
-        @include media.vw-medium-down {
-            transform: translateY(10%);
-        }
-    }
 }
 
 .mobileTitleContainer {
@@ -110,6 +103,20 @@
 
     @include media.vw-medium-down {
         display: block;
+    }
+}
+
+.fade {
+    @include utils.set-transition((opacity, transform), 250ms, ease-in);
+
+    opacity: 1;
+
+    &.isLoading {
+        opacity: 0;
+
+        @include media.vw-medium-down {
+            transform: translateY(10%);
+        }
     }
 }
 

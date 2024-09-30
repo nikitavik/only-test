@@ -24,8 +24,6 @@ export const Circle: FC<CircleProps> = (props) => {
         (360 / timelines.length) *
             timelines.findIndex((timeline) => timeline.id === activeTimelineId);
 
-    console.log(timelines);
-
     return (
         <div
             className={clsx(styles.circle, styles.tabs, className)}

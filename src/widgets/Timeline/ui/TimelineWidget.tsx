@@ -55,6 +55,8 @@ export const TimelineWidget: FC = () => {
             })
         );
 
+    const fadeClassName = clsx(styles.fade, isLoading && styles.isLoading);
+
     if (activeTimeline === undefined) {
         return <div>Error</div>;
     }
@@ -88,12 +90,23 @@ export const TimelineWidget: FC = () => {
                 />
             </div>
 
-            <div className={clsx(styles.sliderContainer, isLoading && styles.isLoading)}>
-                <div className={styles.mobileTitleContainer}>
+            <div className={styles.sliderContainer}>
+                <div
+                    className={clsx(
+                        styles.mobileTitleContainer,
+                        fadeClassName
+                    )}
+                >
                     <h3 className={styles.mobileTitle}>{activeTimeline.title}</h3>
                 </div>
 
-                <TimelineSlider slides={activeTimeline.slides} />
+                <TimelineSlider
+                    slides={activeTimeline.slides}
+                    classes={{
+                        slider: fadeClassName,
+                        navigation: fadeClassName
+                    }}
+                />
             </div>
         </div>
     );

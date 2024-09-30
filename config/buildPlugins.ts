@@ -1,13 +1,14 @@
+import ESLintPlugin from 'eslint-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import StylelintPlugin from 'stylelint-webpack-plugin';
 import webpack from 'webpack';
+
 import { BuildOptions } from './types/config';
-
-import StylelintPlugin from "stylelint-webpack-plugin";
-
-import ESLintPlugin from "eslint-webpack-plugin";
+import path from "path";
 
 export function buildPlugins({ paths }: BuildOptions): webpack.WebpackPluginInstance[] {
+
     return [
         new HtmlWebpackPlugin({
             template: paths.html,
@@ -18,6 +19,6 @@ export function buildPlugins({ paths }: BuildOptions): webpack.WebpackPluginInst
             chunkFilename: 'css/[name].[contenthash:8].css',
         }),
         new StylelintPlugin(),
-        new ESLintPlugin()
+        new ESLintPlugin(),
     ];
 }

@@ -11,13 +11,14 @@ type SliderNavigationProps = {
     controller: SwiperClass;
     isBeginning: boolean;
     isEnd: boolean;
+    className?: string;
 };
 
 export const SliderNavigation: FC<SliderNavigationProps> = (props) => {
-    const { controller, isEnd, isBeginning } = props;
+    const { controller, isEnd, isBeginning, className } = props;
 
     return (
-        <div className={styles.root}>
+        <div className={clsx(styles.root, className)}>
             <button
                 type="button"
                 className={clsx(styles.navigationButton, isBeginning && styles.isHidden)}
