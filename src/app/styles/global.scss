@@ -6,13 +6,13 @@
     box-sizing: border-box;
     border: none;
     background-color: transparent;
-    color: variables.$color-gray-base;
 }
 
 html,
 body,
 button {
-    font-family: PTSans, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: variables.$font-pt-sans;
+    color: variables.$color-gray-base;
 }
 
 html {
@@ -37,15 +37,14 @@ body {
 }
 
 @font-face {
-    font-family: PTSans;
+    font-family: 'PTSans';
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     src: url('../../../public/assets/fonts/PTSans-Regular.ttf') format('ttf');
 }
 
 @font-face {
-    font-family: PTSans;
-    font-style: normal;
-    font-weight: bold;
+    font-family: 'PTSans';
+    font-weight: 700;
     src: url('../../../public/assets/fonts/PTSans-Bold.ttf') format('ttf');
 }

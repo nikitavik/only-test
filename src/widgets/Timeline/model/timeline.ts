@@ -1,4 +1,4 @@
-import { Slide } from 'features/TimelineSlider/model/silde';
+import { Slide } from 'features/TimelineSlider';
 
 export type Timeline = {
     id: number;

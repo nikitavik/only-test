@@ -1,0 +1,28 @@
+@use 'app/styles/utils';
+@use 'app/styles/variables';
+@use 'app/styles/media';
+
+.root {
+    display: none;
+
+    @include media.vw-medium-down {
+        margin-top: 103px;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        column-gap: 10px;
+    }
+}
+
+.dot {
+    @include utils.set-transition(background-color);
+    @include utils.set-size(6px);
+
+    background-color: rgba(variables.$color-gray-base, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &.isActive {
+        background-color: rgba(variables.$color-gray-base, 1);
+    }
+}

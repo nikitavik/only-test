@@ -1,14 +1,13 @@
 import { sleep } from 'app/lib/utils';
 import { CircleControlBlock } from 'features/CircleControlBlock';
-import { TimelineSlider } from 'features/TimelineSlider';
 import { Circle } from 'features/TimelineCircle';
+import { TimelineSlider } from 'features/TimelineSlider';
 import React, { FC, useState } from 'react';
-import { mockTimelines } from 'widgets/Timeline/model/mock-timeline';
-import { Timeline } from 'widgets/Timeline/model/timeline';
-import { YearCounter } from 'widgets/Timeline/ui/YearCounter';
+import { mockTimelines, Timeline } from 'widgets/Timeline';
 
 import clsx from 'clsx';
 
+import { YearCounter } from '../ui/YearCounter';
 import styles from './TimelineWidget.module.scss';
 
 const timelines = mockTimelines;

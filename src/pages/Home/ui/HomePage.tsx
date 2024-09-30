@@ -1,6 +1,6 @@
 import { PageTitle } from 'entities/PageTitle';
 import React, { FC } from 'react';
-import { TimelineWidget } from 'widgets/Timeline/ui/TimelineWidget';
+import { TimelineWidget } from 'widgets/Timeline';
 
 import styles from './HomePage.module.scss';
 

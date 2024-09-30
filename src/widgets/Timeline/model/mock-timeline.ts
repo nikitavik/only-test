@@ -1,6 +1,8 @@
+import { Slide } from 'features/TimelineSlider';
+
 import { faker } from '@faker-js/faker/locale/ru';
 
-import { Slide, Timeline } from './timeline';
+import { Timeline } from './timeline';
 
 const generateTimelineMock = (length: number) => {
     const timelines: Timeline[] = [];

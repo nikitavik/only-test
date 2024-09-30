@@ -1,6 +1,10 @@
 @use 'app/styles/variables' as variables;
 @use 'app/styles/media' as media;
 
+.root {
+    position: relative;
+}
+
 .slide {
     cursor: pointer;
 }

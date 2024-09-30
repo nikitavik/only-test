@@ -1,9 +1,9 @@
-import { calculateTransform } from 'features/TimelineCircle/lib/calculateTransform';
 import React, { FC } from 'react';
-import { Timeline } from 'widgets/Timeline/model/timeline';
+import { Timeline } from 'widgets/Timeline';
 
 import clsx from 'clsx';
 
+import { calculateTransform } from '../lib/calculateTransform';
 import styles from './Circle.module.scss';
 import { CircleDot } from './CircleDot';
 

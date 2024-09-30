@@ -1,9 +1,9 @@
+import ChevronLeft from 'app/assets/chevron-left.svg';
+import ChevronRight from 'app/assets/chevron-right.svg';
 import { padNumber } from 'features/CircleControlBlock/lib/padNumber';
 import React, { FC } from 'react';
 import { IconButton } from 'shared';
 
-import ChevronLeft from '../assets/chevron-left.svg';
-import ChevronRight from '../assets/chevron-right.svg';
 import styles from './CircleControlBlock.module.scss';
 
 type CircleControlBlockProps = {
