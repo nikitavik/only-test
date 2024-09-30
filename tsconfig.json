@@ -12,9 +12,9 @@
         "skipLibCheck": true,
         "noImplicitAny": true,
         "outDir": "./dist/",
-        "baseUrl": ".",
+        "baseUrl": "./",
         "paths": {
-            "*": ["./src/*"]
+            "*": ["src/*"],
         }
     },
     "include": ["src/**/*"],

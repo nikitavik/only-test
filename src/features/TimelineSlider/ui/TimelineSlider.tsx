@@ -1,11 +1,11 @@
 import { Card } from 'entities/Card';
-import {SliderNavigation} from 'features/TimelineSlider/ui/SliderNavigation';
-import {SliderPagination} from 'features/TimelineSlider/ui/SliderPagination';
-import React, {FC, useState} from 'react';
-import {Controller} from 'swiper/modules';
+import { SliderNavigation } from 'features/TimelineSlider/ui/SliderNavigation';
+import { SliderPagination } from 'features/TimelineSlider/ui/SliderPagination';
+import React, { FC, useState } from 'react';
+import { Controller } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
-import type {Swiper as SwiperClass} from 'swiper/types';
+import type { Swiper as SwiperClass } from 'swiper/types';
 
 import { Slide } from '../model/silde';
 import styles from './TimelineSlider.module.scss';
@@ -21,19 +21,20 @@ export const TimelineSlider: FC<TimelineSliderProps> = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
-    console.log(isBeginning)
+    console.log(isBeginning);
     return (
         <div className={styles.root}>
-            {controller !== null &&
-                <SliderNavigation controller={controller} isBeginning={isBeginning} isEnd={isEnd}/>}
+            {controller !== null && (
+                <SliderNavigation controller={controller} isBeginning={isBeginning} isEnd={isEnd} />
+            )}
 
             <Swiper
                 modules={[Controller]}
                 onSwiper={setController}
                 onSlideChange={(swiper) => {
                     setActiveIndex(swiper.activeIndex);
-                    setIsEnd(swiper.isEnd)
-                    setIsBeginning(swiper.isBeginning)
+                    setIsEnd(swiper.isEnd);
+                    setIsBeginning(swiper.isBeginning);
                 }}
                 spaceBetween={80}
                 breakpoints={{
@@ -58,8 +59,13 @@ export const TimelineSlider: FC<TimelineSliderProps> = (props) => {
                 ))}
             </Swiper>
 
-            {controller !== null &&
-                <SliderPagination controller={controller} slides={slides} activeIndex={activeIndex}/>}
+            {controller !== null && (
+                <SliderPagination
+                    controller={controller}
+                    slides={slides}
+                    activeIndex={activeIndex}
+                />
+            )}
         </div>
     );
 };

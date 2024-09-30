@@ -1,9 +1,10 @@
-import {Slide} from 'features/TimelineSlider';
-import React, {FC} from 'react';
-import {SwiperClass} from 'swiper/react';
+import { Slide } from 'features/TimelineSlider';
+import React, { FC } from 'react';
+import { SwiperClass } from 'swiper/react';
+
+import clsx from 'clsx';
 
 import styles from './SliderPagination.module.scss';
-import clsx from "clsx";
 
 type SliderPaginationProps = {
     controller: SwiperClass;
@@ -12,7 +13,7 @@ type SliderPaginationProps = {
 };
 
 export const SliderPagination: FC<SliderPaginationProps> = (props) => {
-    const {slides, controller, activeIndex} = props;
+    const { slides, controller, activeIndex } = props;
 
     return (
         <div className={styles.root}>
