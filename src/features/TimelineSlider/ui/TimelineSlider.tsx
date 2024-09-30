@@ -12,11 +12,11 @@ import styles from './TimelineSlider.module.scss';
 
 type TimelineSliderProps = {
     slides: Slide[];
-    classes?: Classes<'slider' | 'navigation'>
+    classes?: Classes<'slider' | 'navigation'>;
 };
 
 export const TimelineSlider: FC<TimelineSliderProps> = (props) => {
-    const {slides, classes} = props;
+    const { slides, classes } = props;
 
     const [controller, setController] = useState<SwiperClass | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
@@ -32,8 +32,12 @@ export const TimelineSlider: FC<TimelineSliderProps> = (props) => {
     return (
         <div className={styles.root}>
             {controller !== null && (
-                <SliderNavigation controller={controller} isBeginning={isBeginning} isEnd={isEnd}
-                                  className={classes?.navigation}/>
+                <SliderNavigation
+                    controller={controller}
+                    isBeginning={isBeginning}
+                    isEnd={isEnd}
+                    className={classes?.navigation}
+                />
             )}
 
             <Swiper

@@ -91,12 +91,7 @@ export const TimelineWidget: FC = () => {
             </div>
 
             <div className={styles.sliderContainer}>
-                <div
-                    className={clsx(
-                        styles.mobileTitleContainer,
-                        fadeClassName
-                    )}
-                >
+                <div className={clsx(styles.mobileTitleContainer, fadeClassName)}>
                     <h3 className={styles.mobileTitle}>{activeTimeline.title}</h3>
                 </div>
 
@@ -104,7 +99,7 @@ export const TimelineWidget: FC = () => {
                     slides={activeTimeline.slides}
                     classes={{
                         slider: fadeClassName,
-                        navigation: fadeClassName
+                        navigation: fadeClassName,
                     }}
                 />
             </div>

@@ -1,5 +1,5 @@
-@use 'app/styles/utils' as utils;
-@use 'app/styles/variables' as variables;
+@use 'app/styles/utils';
+@use 'app/styles/variables';
 
 $z-index-background: 1;
 $z-index-content: $z-index-background + 1;
