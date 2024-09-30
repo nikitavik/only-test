@@ -35,16 +35,3 @@ body {
     background-color: variables.$color-background-base;
     text-rendering: optimizeLegibility;
 }
-
-@font-face {
-    font-family: 'PTSans';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../../../public/assets/fonts/PTSans-Regular.ttf') format('ttf');
-}
-
-@font-face {
-    font-family: 'PTSans';
-    font-weight: 700;
-    src: url('../../../public/assets/fonts/PTSans-Bold.ttf') format('ttf');
-}

@@ -7,7 +7,7 @@
 }
 
 .title {
-    font-family: 'BebasNeue', sans-serif;
+    font-family: variables.$font-pt-bebas-neue;
     color: variables.$color-blue;
     font-size: utils.to-rem(25px);
     line-height: 1.2;
